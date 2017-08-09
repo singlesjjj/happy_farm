@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="232c86ba-b0f6-4d2b-acf3-a8f69e20c45e" name="ubuntu_server" url="http://119.23.252.112">
+        <fileTransfer host="119.23.252.112" port="22" privateKey="C:\Users\Administrator\Desktop\编程工具\lengzhiyuan.pem" rootFolder="/root/happy_farm" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
