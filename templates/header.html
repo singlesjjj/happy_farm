@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>{{title}}</title>
+	<meta name="description" content="Kenny is a Dashboard & Admin Site Responsive Template by hencework." />
+	<meta name="keywords" content="admin, admin dashboard, admin template, cms, crm, Kenny Admin, kennyadmin, premium admin templates, responsive admin, sass, panel, software, ui, visualization, web app, application" />
+	<meta name="author" content="hencework"/>
+	
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../static/img/favicon.ico">
+	<link rel="icon" href="../static/img/favicon.ico" type="image/x-icon">
+
+	<!-- Data table CSS -->
+	<link href="../static/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+	
+	<!-- Custom CSS -->
+	<link href="../static/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<!--Preloader-->
+	<div class="preloader-it">
+		<div class="la-anim-1"></div>
+	</div>
+	<!--/Preloader-->
+    <div class="wrapper">
+
+        <!-- Top Menu Items -->
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+				<a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block mr-20 pull-left" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+				<a href="#"><img class="brand-img pull-left" src="../static/dist/img/logo.png" alt="brand"/></a>
+				<ul class="nav navbar-right top-nav pull-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-bell top-nav-icon"></i>
+							{% if count_new_events != 0 %}
+							<span class="top-nav-icon-badge">{{count_new_events}}</span>
+							{% end %}
+						</a>
+						<ul  class="dropdown-menu alert-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+							<li>
+								<div class="streamline message-box message-nicescroll-bar">
+									{% for new_event in new_events %}
+									<div class="sl-item">
+										<div class="icon">
+											<i class="{{new_event['event_icon']}}"></i>
+										</div>
+										<div class="sl-content">
+											<a href="{{new_event['event_url']}}" class="inline-block capitalize-font  pull-left">{{new_event['event_name']}}</a>
+											<span class="inline-block font-12  pull-right">{{new_event['event_time']}}</span>
+											<div class="clearfix"></div>
+											<p>{{new_event['event_des']}}</p>
+										</div>
+									</div>
+									<hr>
+									{% end %}
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="../static/dist/img/user1.png" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
+						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+							<li>
+								<a href="#"><i class="fa fa-fw fa-user"></i> 个人信息</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-fw fa-gear"></i> 设置</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#"><i class="fa fa-fw fa-power-off"></i> 登出</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<!-- /Top Menu Items -->
+			
+			<!-- Left Sidebar Menu -->
+			<div class="fixed-sidebar-left">
+				<ul class="nav navbar-nav side-nav nicescroll-bar">
+					<li>
+						<a   href="/managerindex">
+							<i class="icon-picture mr-10"></i>首页</a>
+					</li>
+					<li>
+						<a   href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard_dr">
+							<i class="icon-picture mr-10"></i>数据分析 <span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="dashboard_dr" class="collapse collapse-level-1">
+							<li>
+								<a href="#">运营分析</a>
+							</li>
+							<li>
+								<a href="#">收入分析</a>
+							</li>
+							<li>
+								<a  href="#">访问分析</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr">
+							<i class="icon-present mr-10"></i>商品管理<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="app_dr" class="collapse collapse-level-1">
+							<li>
+								<a href="#">商品分析</a>
+							</li>
+							<li>
+								<a href="#">添加商品</a>
+							</li>
+							<li>
+								<a href="#">商品列表</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#ui_dr">
+							<i class="icon-basket-loaded mr-10"></i>订单管理<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="ui_dr" class="collapse collapse-level-1">
+							<li>
+								<a href="#">订单分析</a>
+							</li>
+							<li>
+								<a href="#">订单列表</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr">
+							<i class=" icon-people mr-10"></i>用户管理<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="form_dr" class="collapse collapse-level-1">
+							<li>
+								<a href="#">用户分析</a>
+							</li>
+							<li>
+								<a href="#">用户列表</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#chart_dr">
+							<i class="icon-social-reddit mr-10"></i>员工管理<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="chart_dr" class="collapse collapse-level-1">
+							<li>
+								<a href="#">员工分析</a>
+							</li>
+							<li>
+								<a href="#">添加员工</a>
+							</li>
+							<li>
+								<a href="#">员工列表</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:void(0);" data-toggle="collapse" data-target="#table_dr">
+							<i class="icon-bubbles mr-10"></i>消息管理<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+						<ul id="table_dr" class="collapse collapse-level-1">
+							<li>
+								<a href="#">消息分析</a>
+							</li>
+							<li>
+								<a href="#">消息列表</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- /Left Sidebar Menu -->
+
+        <!-- Main Content -->
+		<div class="page-wrapper">
+            <div class="container-fluid">
+				
+				<!-- Title -->
+				<div class="row heading-bg  bg-blue">
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+						<h5 class="txt-light">{{web_name}}</h5>
+					</div>
+					<!-- Breadcrumb -->
+					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+						<ol class="breadcrumb">
+							{% if web_name != '主页' %}
+								<li><a href="/managerindex">主页</a></li>
+								<li><a href="#"><span>{{web_parent_name}}</span></a></li>
+								<li class="active"><span>{{web_name}}</span></li>
+							{% end %}
+						</ol>
+					</div>
+					<!-- /Breadcrumb -->
+				</div>
+				<!-- /Title -->
+			</div>
