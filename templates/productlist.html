@@ -1,0 +1,68 @@
+{% extends 'main.html' %}
+
+{% block additional_css %}
+
+{% end %}
+
+{% block additional_css_after_style %}
+
+{% end %}
+
+{% block main_part %}
+    <!-- Product Row One -->
+                <div class="row">
+                    <div class="dropdown">
+                        <button aria-expanded="true" data-toggle="dropdown" class="btn btn-success btn-outline dropdown-toggle " type="button"> dropdown <span class="caret"></span></button>
+                        <ul role="menu" data-dropdown-in="flipInY" data-dropdown-out="flipOutY" class="dropdown-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                            </li>
+                        <li class="divider"></li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            </li>
+                        </ul>
+                        <div class="pull-right search">
+                            <input class="form-control" placeholder="Search" type="search">
+                        </div>
+                    </div>
+                </div>
+				<div class="row">
+                    {% for item in product_list %}
+       				<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+						<div class="panel panel-default card-view pa-0">
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body pa-0">
+									<article class="col-item">
+										<div class="photo">
+											<div class="options">
+												<button class="btn btn-default btn-icon-anim btn-circle mr-5" type="submit"><i class="icon-pencil"></i></button>
+
+												<button class="btn btn-info btn-icon-anim btn-circle" type="submit"><i class="icon-trash"></i></button>
+											</div>
+
+											<a href="#"> <img src="{{item['thumb_img_url']}}" class="img-responsive" alt="Product Image" /> </a>
+										</div>
+										<div class="info text-center">
+											<h6>{{item['product_name']}}</h6>
+											<span class="product-spec capitalize-font block mt-5 mb-5">{{item['brief']}}</span>
+											<span class="head-font block text-warning">￥{{item['shop_price']}}</span>
+										</div>
+									</article>
+								</div>
+							</div>
+						</div>
+					</div>
+                    {% end %}
+				<!-- /Product Row One -->
+{% end %}
+
+{% block additional_script %}
+
+{% end %}

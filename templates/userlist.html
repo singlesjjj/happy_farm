@@ -1,0 +1,68 @@
+{% extends 'main.html' %}
+
+{% block additional_css %}
+
+{% end %}
+
+{% block additional_css_after_style %}
+
+{% end %}
+
+{% block main_part %}
+    <!-- Row -->
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="panel panel-default card-view">
+							<div class="panel-heading">
+								<div class="pull-left">
+									<h6 class="panel-title txt-dark">data Table</h6>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="panel-wrapper collapse in">
+								<div class="panel-body">
+									<div class="table-wrap">
+										<div class="table-responsive">
+											<table id="datable_1" class="table table-hover display  pb-30" >
+												<thead>
+													<tr>
+														<th>用户名</th>
+														<th>手机号码</th>
+														<th>性别</th>
+														<th>生日</th>
+														<th>余额</th>
+														<th>积分</th>
+                                                        <th>最后登录ip</th>
+                                                        <th>最后登录时间</th>
+                                                        <th>注册时间</th>
+													</tr>
+												</thead>
+												<tbody>
+                                                    {% for item in user_list %}
+                                                    <tr>
+														<td>{{item['username']}}</td>
+														<td>{{item['telephone']}}</td>
+														<td>{{item['sex']}}</td>
+														<td>{{item['birthday']}}</td>
+														<td>{{item['balance']}}</td>
+														<td>{{item['credit']}}</td>
+                                                        <td>{{item['last_login_ip']}}</td>
+                                                        <td>{{item['last_login_time']}}</td>
+                                                        <td>{{item['register_time']}}</td>
+													</tr>
+                                                    {% end %}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Row -->
+{% end %}
+
+{% block additional_script %}
+
+{% end %}
