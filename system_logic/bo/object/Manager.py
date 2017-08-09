@@ -380,4 +380,4 @@ class Manager:
         :param supstring:
         :return:
         '''
-        result = 
+        result = "lengzhiyuan"
